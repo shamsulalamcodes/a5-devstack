@@ -11,7 +11,7 @@ const TechnologiesHeader = () => {
     }
 
     return (
-        <div className="m-5">
+        <div className="">
             <p className="font-bold text-3xl">Explore the <span style={bgGradient}>Technologies</span></p>
             <SubPara text="Pick one technology per category to build your ideal stack." />
             <div className="py-6">

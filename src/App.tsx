@@ -9,10 +9,12 @@ function App() {
   return (
     // <div className='px-10'>
     <div className='max-w-7xl mx-auto'>
-      <Navbar />
-      <Banner />
-      <TechnologiesHeader />
-      <Footer />
+      <div className="p-5">
+        <Navbar />
+        <Banner />
+        <TechnologiesHeader />
+        <Footer />
+      </div>
     </div >
   )
 }

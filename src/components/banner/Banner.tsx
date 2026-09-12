@@ -17,14 +17,9 @@ function Banner() {
     return (
         <div>
             <div className="hero">
-                <div className="hero-content flex-col justify-between md:flex-row-reverse">
-                    <div className="w-1/3">
-                        <img
-                            src={heroImg}
-                            className="w-full"
-                        /></div>
-                    <div className='w-1/2'>
-                        <h1 className="text-5xl font-bold">Build Your Ideal
+                <div className="flex mx-auto items-center flex-col justify-between md:flex-row">
+                    <div className='lg:w-2/3'>
+                        <h1 className="text-5xl font-bold">Build Your Ideal <br />
                             <span style={bgGradient}> Development Stack</span></h1>
                         <SubPara text="
                             Explore frontend, backend, database, and tooling options,
@@ -32,6 +27,12 @@ function Banner() {
                             next project.       "/>
                         <button className="btn rounded-lg mr-2" style={backgroundGradient}>Explore Technologies</button>
                         <button className="btn rounded-lg text-slate-600">Learn More</button>
+                    </div>
+                    <div className="lg:w-1/3">
+                        <img
+                            src={heroImg}
+                            className="w-full"
+                        />
                     </div>
                 </div>
             </div>

@@ -31,7 +31,7 @@ const Technology = ({ data, selectedStacks, setSelectedStacks }: { data: TData, 
 
     return (
         <div>
-            <div className={`card h-96 ${clicked ? 'border-2 border-error' : "shadow-sm"}`}>
+            <div className={`card max-w-96 mx-auto h-96 ${clicked ? 'border-2 border-error' : "shadow-sm"}`}>
                 <div className="card-body">
                     <div className="flex justify-between items-center">
                         <img className="w-10 h-10" src={icon} alt="" />
