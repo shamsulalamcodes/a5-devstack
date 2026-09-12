@@ -23,7 +23,7 @@ const MyStacks = ({ selectedStacks, setSelectedStacks }: { selectedStacks: TData
 
     return (
         <div>
-            <div className="card shadow-sm">
+            <div className="card shadow-sm mx-auto max-w-96 ">
                 <div className="card-body">
                     <div className="">
                         <h2 className="text-3xl font-bold">Your Stack</h2>
