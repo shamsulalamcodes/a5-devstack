@@ -48,7 +48,7 @@ const Technology = ({ data, selectedStacks, setSelectedStacks }: { data: TData, 
                     </div>
                     <div className="">
                         <ToastContainer />
-                        <button onClick={handleClick} className={`btn ${clicked ? 'btn-outline btn-error' : 'btn-neutral'} w-full rounded-lg`}>{`${clicked ? '✓Added To Stack' : 'Add To Stack'}`}</button>
+                        <button onClick={handleClick} className={`btn ${clicked ? 'cursor-not-allowed btn-outline btn-error' : 'btn-neutral'} w-full rounded-lg`}>{`${clicked ? '✓Added To Stack' : 'Add To Stack'}`}</button>
                     </div>
                 </div>
             </div>

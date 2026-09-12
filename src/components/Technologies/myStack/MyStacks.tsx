@@ -3,11 +3,22 @@ import SubPara from "../../subpara/SubPara"
 import type { Dispatch, SetStateAction } from "react"
 import MyStack from "./MyStack"
 import NoStack from "./NoStack"
+import { Flip, toast } from "react-toastify"
 
 const MyStacks = ({ selectedStacks, setSelectedStacks }: { selectedStacks: TData[], setSelectedStacks: Dispatch<SetStateAction<TData[]>> }) => {
 
     const removeAll = () => {
-        setSelectedStacks([])
+        if (selectedStacks.length > 0) {
+            setSelectedStacks([])
+            toast.error(`All Stacks Removed`, {
+                position: "top-right", autoClose: 2000, hideProgressBar: false, closeOnClick: false, pauseOnHover: true, draggable: true, progress: undefined, theme: "light", transition: Flip,
+            })
+        }
+        else {
+            toast.warning(`No Stack To Remove!`, {
+                position: "top-right", autoClose: 2000, hideProgressBar: false, closeOnClick: false, pauseOnHover: true, draggable: true, progress: undefined, theme: "light", transition: Flip,
+            })
+        }
     }
 
     return (

@@ -27,7 +27,7 @@ const MyStack = ({ data, selectedStacks, setSelectedStacks }: { data: TData, sel
                             <p className="py-2 text-slate-600">{category}</p>
                         </div>
                     </div>
-                    <div onClick={handleClick} className="px-2 rounded-lg py-1 border border-slate-300">X</div>
+                    <button onClick={handleClick} className="btn">X</button>
                 </div>
             </div>
         </div>
