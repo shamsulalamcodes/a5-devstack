@@ -6,7 +6,7 @@ export default function Navbar() {
 
     return (
         <>
-            <div className="max-lg:collapse border-b border-slate-300 w-full font-bold">
+            <div className="max-lg:collapse border-b border-slate-300 w-full font-bold sticky top-0 bg-base-100 z-1">
                 <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
                 <label htmlFor="navbar-1-toggle" className="fixed inset-0 hidden max-lg:peer-checked:block"></label>
                 <div className="collapse-title navbar">

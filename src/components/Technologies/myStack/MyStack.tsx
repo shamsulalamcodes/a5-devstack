@@ -9,7 +9,7 @@ const MyStack = ({ data, selectedStacks, setSelectedStacks }: { data: TData, sel
     const handleClick = () => {
         const filteredData = selectedStacks.filter(sel => sel.id !== id)
         setSelectedStacks(filteredData)
-        toast.error('Removed From Stack', {
+        toast.error(`${name} Removed From Stack`, {
             position: "top-right", autoClose: 2000, hideProgressBar: false, closeOnClick: false, pauseOnHover: true, draggable: true, progress: undefined, theme: "light", transition: Bounce,
         })
     }

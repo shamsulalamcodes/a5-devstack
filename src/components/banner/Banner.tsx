@@ -17,7 +17,7 @@ function Banner() {
     return (
         <div>
             <div className="hero">
-                <div className="hero-content flex-col justify-between lg:flex-row-reverse">
+                <div className="hero-content flex-col justify-between md:flex-row-reverse">
                     <div className="w-1/3">
                         <img
                             src={heroImg}

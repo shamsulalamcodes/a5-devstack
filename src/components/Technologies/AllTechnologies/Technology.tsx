@@ -1,13 +1,19 @@
-import { useState, type Dispatch, type SetStateAction } from "react"
+import { useEffect, useState, type Dispatch, type SetStateAction } from "react"
 import SubPara from "../../subpara/SubPara"
 import type { TData } from "../../types/type"
 import { Bounce, toast, ToastContainer } from "react-toastify"
 
 const Technology = ({ data, selectedStacks, setSelectedStacks }: { data: TData, selectedStacks: TData[], setSelectedStacks: Dispatch<SetStateAction<TData[]>> }) => {
 
+
     const { id, name, category, description, icon, rating, difficulty, badge } = data
 
     const [clicked, setClicked] = useState(false)
+
+    useEffect(() => {
+        const isSelected = selectedStacks.some(s => s.id === id)
+        if (!isSelected) setClicked(false)
+    }, [selectedStacks])
 
     const handleClick = () => {
         setClicked(true)
@@ -16,7 +22,7 @@ const Technology = ({ data, selectedStacks, setSelectedStacks }: { data: TData, 
             if (newData) return
             else {
                 setSelectedStacks([...selectedStacks, data])
-                toast('Added To Stack', {
+                toast(`${name} Added To Stack`, {
                     position: "top-right", autoClose: 2000, hideProgressBar: false, closeOnClick: false, pauseOnHover: true, draggable: true, progress: undefined, theme: "light", transition: Bounce,
                 })
             };
@@ -25,7 +31,7 @@ const Technology = ({ data, selectedStacks, setSelectedStacks }: { data: TData, 
 
     return (
         <div>
-            <div className={`card h-80 ${clicked ? 'border-2 border-error' : "shadow-sm"}`}>
+            <div className={`card h-96 ${clicked ? 'border-2 border-error' : "shadow-sm"}`}>
                 <div className="card-body">
                     <div className="flex justify-between items-center">
                         <img className="w-10 h-10" src={icon} alt="" />
