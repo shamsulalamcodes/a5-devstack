@@ -13,7 +13,7 @@ const data = fetchData()
 const AllTechnologies = () => {
     return (
         <div>
-            <Suspense fallback={<h1 className="text-xl text-center">Loading...</h1>}>
+            <Suspense fallback={<span className="loading loading-spinner loading-xl"></span>}>
                 <Technologies data={data} />
             </Suspense>
         </div>
