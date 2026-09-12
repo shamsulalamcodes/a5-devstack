@@ -1,10 +1,2 @@
 @import "tailwindcss";
 @plugin "daisyui";
-
-.bgGradient {
-    background: 'linear-gradient(to right, #FF5722, #D81B7E, #7C3AED)';
-    WebkitBackgroundClip: 'text';
-    WebkitTextFillColor: 'transparent';
-    backgroundClip: 'text'
-
-}

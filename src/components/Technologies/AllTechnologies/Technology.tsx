@@ -3,8 +3,19 @@ import SubPara from "../../subpara/SubPara"
 import type { TData } from "../../types/type"
 import { Bounce, toast, ToastContainer } from "react-toastify"
 
+const badgeColors: Record<string, string> = {
+    blue: 'badge-info',
+    green: 'badge-success',
+    orange: 'badge-warning',
+    red: 'badge-error',
+}
+const gradientColors = Object.keys(badgeColors)
+
+
+
 const Technology = ({ data, selectedStacks, setSelectedStacks }: { data: TData, selectedStacks: TData[], setSelectedStacks: Dispatch<SetStateAction<TData[]>> }) => {
 
+    const [color] = useState(() => gradientColors[Math.floor(Math.random() * gradientColors.length)])
 
     const { id, name, category, description, icon, rating, difficulty, badge } = data
 
@@ -35,7 +46,7 @@ const Technology = ({ data, selectedStacks, setSelectedStacks }: { data: TData, 
                 <div className="card-body">
                     <div className="flex justify-between items-center">
                         <img className="w-10 h-10" src={icon} alt="" />
-                        <span className="badge badge-sm badge-success">{badge}</span>
+                        <span className={`badge badge-sm ${badgeColors[color]}`}>{badge}</span>
                     </div>
                     <div className="">
                         <h2 className="text-3xl font-bold">{name}</h2>
@@ -48,7 +59,7 @@ const Technology = ({ data, selectedStacks, setSelectedStacks }: { data: TData, 
                     </div>
                     <div className="">
                         <ToastContainer />
-                        <button onClick={handleClick} className={`btn ${clicked ? 'cursor-not-allowed btn-outline btn-error' : 'btn-neutral'} w-full rounded-lg`}>{`${clicked ? '✓Added To Stack' : 'Add To Stack'}`}</button>
+                        <button onClick={handleClick} className={`btn ${clicked ? 'cursor-not-allowed btn-outline btn-error' : 'btn-neutral'} w-full rounded-lg`}>{`${clicked ? '✓ Added To Stack' : 'Add To Stack'}`}</button>
                     </div>
                 </div>
             </div>
